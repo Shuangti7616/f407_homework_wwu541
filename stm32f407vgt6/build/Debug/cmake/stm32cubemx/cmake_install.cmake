@@ -1,4 +1,4 @@
-# Install script for directory: D:/ST/P1/lightlight/cmake/stm32cubemx
+# Install script for directory: D:/Workplace/stm32f407_hw_template/stm32f407vgt6/cmake/stm32cubemx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

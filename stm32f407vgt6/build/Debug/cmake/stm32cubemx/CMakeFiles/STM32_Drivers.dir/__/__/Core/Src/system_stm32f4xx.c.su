@@ -1,2 +1,2 @@
-D:/ST/P1/lightlight/Core/Src/system_stm32f4xx.c:167:6:SystemInit	4	static
-D:/ST/P1/lightlight/Core/Src/system_stm32f4xx.c:220:6:SystemCoreClockUpdate	32	static
+D:/Workplace/stm32f407_hw_template/stm32f407vgt6/Core/Src/system_stm32f4xx.c:167:6:SystemInit	4	static
+D:/Workplace/stm32f407_hw_template/stm32f407vgt6/Core/Src/system_stm32f4xx.c:220:6:SystemCoreClockUpdate	32	static

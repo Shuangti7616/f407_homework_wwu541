@@ -1,4 +1,4 @@
-# Install script for directory: D:/ST/P1/lightlight
+# Install script for directory: D:/Workplace/stm32f407_hw_template/stm32f407vgt6
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/ST/P1/lightlight/build/Debug/cmake/stm32cubemx/cmake_install.cmake")
+  include("D:/Workplace/stm32f407_hw_template/stm32f407vgt6/build/Debug/cmake/stm32cubemx/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/ST/P1/lightlight/build/Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Workplace/stm32f407_hw_template/stm32f407vgt6/build/Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

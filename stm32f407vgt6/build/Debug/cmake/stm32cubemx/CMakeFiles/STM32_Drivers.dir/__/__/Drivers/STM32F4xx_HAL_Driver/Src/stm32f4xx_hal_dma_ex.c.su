@@ -1,4 +1,4 @@
-D:/ST/P1/lightlight/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:100:19:HAL_DMAEx_MultiBufferStart	32	static
-D:/ST/P1/lightlight/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:154:19:HAL_DMAEx_MultiBufferStart_IT	32	static
-D:/ST/P1/lightlight/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:239:19:HAL_DMAEx_ChangeMemory	24	static
-D:/ST/P1/lightlight/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:276:13:DMA_MultiBufferSetConfig	24	static
+D:/Workplace/stm32f407_hw_template/stm32f407vgt6/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:100:19:HAL_DMAEx_MultiBufferStart	32	static
+D:/Workplace/stm32f407_hw_template/stm32f407vgt6/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:154:19:HAL_DMAEx_MultiBufferStart_IT	32	static
+D:/Workplace/stm32f407_hw_template/stm32f407vgt6/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:239:19:HAL_DMAEx_ChangeMemory	24	static
+D:/Workplace/stm32f407_hw_template/stm32f407vgt6/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:276:13:DMA_MultiBufferSetConfig	24	static

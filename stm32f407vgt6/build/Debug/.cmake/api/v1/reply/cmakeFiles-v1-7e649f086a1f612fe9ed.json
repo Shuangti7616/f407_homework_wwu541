@@ -150,8 +150,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "D:/ST/P1/lightlight/build/Debug",
-		"source" : "D:/ST/P1/lightlight"
+		"build" : "D:/Workplace/stm32f407_hw_template/stm32f407vgt6/build/Debug",
+		"source" : "D:/Workplace/stm32f407_hw_template/stm32f407vgt6"
 	},
 	"version" : 
 	{

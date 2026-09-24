@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -86,22 +87,41 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
+  __HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, 0);
+  int d=1;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  
   while (1)
   {
+    
+    
+    if(d==1){
+      for(int p=0;p<=900;p++){
+        __HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, p);
+        HAL_Delay(1);
+      }
+      d=-1;
+    }
+    else{
+      for(int p=900;p>=0;p--){
+        __HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, p);
+        HAL_Delay(1);
+      }
+      d=1;
+    }
+    
+    
+  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
-    HAL_Delay(500);
-    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_SET);
-    HAL_Delay(500);
-  }
+ 
   /* USER CODE END 3 */
 }
 
