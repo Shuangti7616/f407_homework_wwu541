@@ -44,7 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t receivedData[2]; // Buffer to store received data
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -55,6 +55,19 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    HAL_UART_Transmit_IT(&huart1, receivedData, 2);
+    GPIO_PinState state = GPIO_PIN_RESET;
+    if (receivedData[1] == '0') {
+        state = GPIO_PIN_SET;
+    }
+    if (receivedData[0] == 'R') {
+        HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, state);
+    } else if (receivedData[0] == 'G') {
+        HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, state);
+    }
+    HAL_UART_Receive_IT(&huart1, receivedData, 2);
+  }
 
 /* USER CODE END 0 */
 
@@ -90,32 +103,19 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 //  char msg[] = "Hello, World!";
-  uint8_t receivedData[2]; // Buffer to store received data
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  
+  HAL_UART_Receive_IT(&huart1, receivedData, 2);
   while (1)
   {
-//    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-//    HAL_Delay(1000); // Delay for 1 second
-    HAL_UART_Receive(&huart1, receivedData, 2, HAL_MAX_DELAY);
-    HAL_UART_Transmit(&huart1, receivedData, 2, 100);
-    GPIO_PinState state = GPIO_PIN_RESET;
-    if (receivedData[1] == '0') {
-        state = GPIO_PIN_SET;
-    }
-    if (receivedData[0] == 'R') {
-        HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, state);
-    } else if (receivedData[0] == 'G') {
-        HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, state);
-    }
-  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
- 
+  }
   /* USER CODE END 3 */
 }
 
