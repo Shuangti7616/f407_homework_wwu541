@@ -18,12 +18,12 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,11 +87,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM9_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
-  __HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, 0);
-  int d=1;
+  char msg[] = "Hello, World!";
+//  uint8_t receivedData[2]; // Buffer to store received data
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,24 +98,11 @@ int main(void)
   
   while (1)
   {
-    
-    
-    if(d==1){
-      for(int p=0;p<=900;p++){
-        __HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, p);
-        HAL_Delay(1);
-      }
-      d=-1;
-    }
-    else{
-      for(int p=900;p>=0;p--){
-        __HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, p);
-        HAL_Delay(1);
-      }
-      d=1;
-    }
-    
-    
+    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+    HAL_Delay(1000); // Delay for 1 second
+//    HAL_UART_Receive(&huart1, receivedData, 2, HAL_MAX_DELAY);
+//    HAL_UART_Transmit(&huart1, receivedData, 2, 100);
+//    GPIO_PinState state = 
   }
     /* USER CODE END WHILE */
 
